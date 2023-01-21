@@ -47,6 +47,9 @@ def mse(X_train, y_train, w):
     for i in range(X_train.shape[0]):
         result += pow(pred(X_train[0], w) - y_train[i], 2)
 
+    # Divide By Total Number Of Features
+    result = result / X_train.shape[0]
+
     # Return Mean Squared Error
     return result
 
@@ -99,6 +102,6 @@ subtestFn()
 print ('------------------testFn_Part2-------------------')
 testFn_Part2()
 
-# Mean Squared Error Computed From Our Own Linear Regression Model Were 910,406
-# Mean Squared Error Computed From scikit-learn Library Were 2,867
-# The Difference Were A Lot, Our Model Didn't Perform Too Well
+# Mean Squared Error Computed From Our Own Linear Regression Model Were 7,035
+# Mean Squared Error Computed From scikit-learn Library Were 3,249
+# The Difference Were Not A Lot, So Our Model Performed Well
